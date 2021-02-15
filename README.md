@@ -15,7 +15,7 @@
 ## 弊病 🐛
 - 电脑只能连接一个adb设备（因为直接采用了 uiautomator2.connect()）
 
-## 源码运行提示
+## 源码运行提示 🎈
 - 推荐python版本为3.9
 - 需要安装uiautomator2和requests
 ### win环境下打开cmd：
@@ -71,7 +71,7 @@ List of devices attached
 brew install python@3.9
 brew cask install android-platform-tools
 ```
-- 补齐依赖所需代码见上文
+- 补齐依赖所需代码见[上文](https://github.com/Bhscer/LetalkRollCall/blob/main/README.md#macos%E7%8E%AF%E5%A2%83%E5%9C%A8%E7%BB%88%E7%AB%AF%E4%B8%AD%E6%89%A7%E8%A1%8C)
 1.  连接模拟器/手机
 - mumu模拟器可尝试终端执行以下命令：
 ```adb kill-server && adb server && adb shell```
