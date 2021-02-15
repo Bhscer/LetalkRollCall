@@ -15,7 +15,21 @@
 ## 弊病 🐛
 - 电脑只能连接一个adb设备（因为直接采用了 uiautomator2.connect()）
 
-## 各种连接方式 🔗
+## 源码运行提示
+- 推荐python版本为3.9
+- 需要安装uiautomator2和requests
+### win环境下打开cmd：
+```
+pip install uiautomator2
+pip install requests
+```
+### macos环境在终端中执行：
+```
+pip3 install uiautomator2
+pip3 install requests
+```
+
+## win环境下的使用方式 🔗
 
 ### 在此之前
 - 下载[adb工具包](https://developer.android.google.cn/studio/releases/platform-tools)并将其中所有文件拖入C:\Windows中或者添加到环境变量
@@ -23,7 +37,7 @@
 
 ### 连接虚拟机（较推荐）
 
-#### mumu模拟器（win版）
+#### mumu模拟器
 1. 启动模拟器
 2. 打开cmd输入 ```adb connect 127.0.0.1:7555```
 3. 不出意外的话会显示：
@@ -47,3 +61,18 @@ List of devices attached
 ```
 4.  如果后面跟着的是device说明连接已经正常
 5.  返回打开已经打包好的程序或者源码即可运行
+
+## macos环境下的使用方式 🔗
+### 由于手头没有macos系统无法进行测试，在此大概罗列方法
+0.  安装adb环境和python3.9环境并补齐依赖
+- 推荐使用HomeBrew来安装adb环境和python3.9环境
+- HomeBrew安装方法自行百度，安装后执行
+```
+brew install python@3.9
+brew cask install android-platform-tools
+```
+- 补齐依赖所需代码见上文
+1.  连接模拟器/手机
+- mumu模拟器可尝试终端执行以下命令：
+```adb kill-server && adb server && adb shell```
+2.  打开源码运行
