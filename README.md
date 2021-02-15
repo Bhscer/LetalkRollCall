@@ -1,21 +1,21 @@
 # LetalkRollCall
 
-## 软件介绍
-一个简单的py脚本来连接手机并在获取到乐桃签到信息时进行签到
+## 软件介绍 🍑
+一个简单的py脚本来连接手机并在获取到乐桃的签到信息时进行签到
 > 基于uiautomator2，由pyinstaller打包而成
 
-### 重要提示
+### 重要提示 🚩
 - 代码未经过正式的测试，不保证效果！
 
 
-## 下载
+## 下载 🧭
 - 从release页下载最新版本或者直接下载源码补齐依赖后运行
 
 
-## 弊病
+## 弊病 🐛
 - 电脑只能连接一个adb设备（因为直接采用了 uiautomator2.connect()）
 
-## 各种连接方式
+## 各种连接方式 🔗
 
 ### 在此之前
 - 下载[adb工具包](https://developer.android.google.cn/studio/releases/platform-tools)并将其中所有文件拖入C:\Windows中或者添加到环境变量
