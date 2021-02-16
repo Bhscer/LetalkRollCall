@@ -1,21 +1,21 @@
 # LetalkRollCall
 
-## 软件介绍 🍑
+## 软件介绍
 一个简单的py脚本来连接手机并在获取到乐桃的签到信息时进行签到
 > 基于uiautomator2，由pyinstaller打包而成
 
-### 重要提示 🚩
+### 重要提示
 - 代码未经过正式的测试，不保证效果！
 
 
-## 下载 🧭
+## 下载
 - 从release页下载最新版本或者直接下载源码补齐依赖后运行
 
 
-## 弊病 🐛
+## 弊病
 - 电脑只能连接一个adb设备（因为直接采用了 uiautomator2.connect()）
 
-## 源码运行提示 🎈
+## 源码运行提示
 - 推荐python版本为3.9
 - 需要安装uiautomator2，requests和pyaudio
 ### win环境下打开cmd：
@@ -33,7 +33,7 @@ brew install portaudio
 pip3 install pyaudio
 ```
 
-## win环境下的使用方式 🔗
+## win环境下的使用方式
 
 ### 在此之前
 - 下载[adb工具包](https://developer.android.google.cn/studio/releases/platform-tools)并将其中所有文件拖入C:\Windows中或者添加到环境变量
@@ -66,7 +66,7 @@ List of devices attached
 4.  如果后面跟着的是device说明连接已经正常
 5.  返回打开已经打包好的程序或者源码即可运行
 
-## macos环境下的使用方式 🔗
+## macos环境下的使用方式
 ### 由于手头没有macos系统无法进行测试，在此大概罗列方法
 0.  安装adb环境和python3.9环境并补齐依赖
 - 推荐使用HomeBrew来安装adb环境和python3.9环境
