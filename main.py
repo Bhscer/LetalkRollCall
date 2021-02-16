@@ -143,7 +143,7 @@ else:
                                     check_if_rollcall_success()
                                 else:
                                     print(" > 自动签到失败，请前往手动签到！")
-
+                                    play()
                             elif rollcall_title[1] == "-":
                                 rollcall_title_num1 = int(rollcall_title[0])
                                 rollcall_title_num2 = int(rollcall_title[2])
@@ -159,6 +159,7 @@ else:
                                     check_if_rollcall_success()
                             else:
                                 print(" > 签到失败！")
+                                play()
                             print("")
                     except:
                         if is_rollcall_flag:
