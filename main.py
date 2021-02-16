@@ -1,7 +1,15 @@
-import uiautomator2, time, random, requests, json
+import json
+import random
+import requests
 import subprocess
+import time
+import uiautomator2
+import wave
+import pyaudio
 
 # letalk_app_name = "com.bhscer.letalkdemo"
+
+
 letalk_app_name = "com.strong.letalk"
 
 is_inletalk = True
@@ -22,7 +30,31 @@ pi = subprocess.Popen(order, shell=True, stdout=subprocess.PIPE)
 adb_d = str(pi.stdout.read(), encoding="utf8")
 
 
-# print(adb_d)
+#print(adb_d)
+
+def play():
+  CHUNK = 1024
+  wf = wave.open("res//warn.wav", 'rb')
+  # instantiate PyAudio (1)
+  p = pyaudio.PyAudio()
+  def callback(in_data, frame_count, time_info, status):
+    data = wf.readframes(frame_count)
+    return (data, pyaudio.paContinue)
+  # open stream (2)
+  stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+          channels=wf.getnchannels(),
+          rate=wf.getframerate(),
+          output=True,
+          stream_callback=callback)
+  # read data
+  stream.start_stream()
+  while stream.is_active():
+    time.sleep(0.1)
+  # stop stream (4)
+  stream.stop_stream()
+  stream.close()
+  # close PyAudio (5)
+  p.terminate()
 
 
 def check_if_rollcall_success():
@@ -32,13 +64,16 @@ def check_if_rollcall_success():
             print(" > 签到成功")
             if on_debug:
                 ss = random.randint(0, 1)
+                play()
                 if ss == 0:
                     d(resourceId=letalk_app_name + ":id/show_add").click()
                 elif ss == 1:
                     d(resourceId=letalk_app_name + ":id/show_subtract").click()
         else:
+            play()
             print(" > 疑似自动签到失败，请前往手动签到！\n > 正确答案是%i" % rollcall_true_ans)
     except:
+        play()
         print(" > 疑似自动签到失败，请前往手动签到！\n > 正确答案是%i" % rollcall_true_ans)
 
 
