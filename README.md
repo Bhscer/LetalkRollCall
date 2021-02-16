@@ -17,16 +17,20 @@
 
 ## 源码运行提示 🎈
 - 推荐python版本为3.9
-- 需要安装uiautomator2和requests
+- 需要安装uiautomator2，requests和pyaudio
 ### win环境下打开cmd：
 ```
 pip install uiautomator2
 pip install requests
+pip install pyaudio
 ```
+- 如果pyaudio安装报错请尝试去官网下载 在此提供一个 [镜像站](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
 ### macos环境在终端中执行：
 ```
 pip3 install uiautomator2
 pip3 install requests
+brew install portaudio
+pip3 install pyaudio
 ```
 
 ## win环境下的使用方式 🔗
