@@ -201,7 +201,6 @@ else:
                     else:
                         is_rollcall_flag = True
 
-                    if is_rollcall_flag:
                         rollcall_title = d(resourceId=letalk_app_name + ":id/tv_content").get_text()
                         print("\n- " + time.strftime("%H:%M:%S ", time.localtime()) + "检测到签到")
                         is_rollcall_flag = True
@@ -239,8 +238,12 @@ else:
                                     time.sleep(0.2)
                                     check_if_rollcall_success()
                             else:
-                                print(" > 签到失败！")
-                            print("")
+                                print(" > 未能识别的签到命令 请前往查看!")
+                                play()
+                        else:
+                            print(" > 未能识别的签到命令 请前往查看!")
+                            play()
+
 
                 else:
                     if is_inletalk:
